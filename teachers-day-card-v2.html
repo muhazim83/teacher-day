@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Teachers' Day – Ma'am Shahzia Gorgaje</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg1:#0f1b3d;--bg2:#2a1a52;--gold:#e8c26a;--gold2:#fff1c1;--paper:#fffaf0;--ink:#2b2a3a;--accent:#7a2e5d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 14px;
+font-family:'Poppins',system-ui,sans-serif;background:radial-gradient(circle at 20% 10%,var(--bg2),var(--bg1) 70%);overflow-x:hidden;color:#fff}
+.sym{position:fixed;color:var(--gold);opacity:.16;animation:float 12s linear infinite;pointer-events:none;user-select:none}
+@keyframes float{from{transform:translateY(105vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}
+.stage{perspective:1600px;width:min(92vw,520px)}
+.card{position:relative;width:100%;aspect-ratio:3/4;transform-style:preserve-3d;cursor:pointer}
+.cover,.inside{position:absolute;inset:0;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.5)}
+.inside{background:var(--paper);color:var(--ink);padding:9% 8%;display:flex;flex-direction:column;align-items:center;text-align:center;border:3px solid var(--gold);overflow:hidden}
+.inside::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold);border-radius:12px;pointer-events:none}
+.cover{background:linear-gradient(145deg,#1b2a5e,#3b1f6b);border:3px solid var(--gold);transform-origin:left center;transition:transform 1.3s cubic-bezier(.6,0,.2,1);backface-visibility:hidden;z-index:2;
+display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8%;overflow:hidden}
+.card.open .cover{transform:rotateY(-170deg)}
+.cover::before{content:"";position:absolute;inset:10px;border:1px solid rgba(232,194,106,.6);border-radius:12px}
+.badge{width:96px;height:96px;border-radius:50%;background:radial-gradient(circle,var(--gold2),var(--gold));color:#7a2e5d;display:grid;place-items:center;font-size:46px;box-shadow:0 0 40px rgba(232,194,106,.55);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.cover h1{font:700 clamp(26px,7vw,40px)/1.15 'Playfair Display',serif;margin:22px 0 6px;color:var(--gold2)}
+.cover p{margin:0;font-weight:300;letter-spacing:.2em;font-size:12px;text-transform:uppercase;color:#d9d4ff}
+.hint{margin-top:26px;font-size:13px;color:var(--gold);animation:blink 1.8s infinite}
+@keyframes blink{50%{opacity:.3}}
+.orn{font-size:18px;color:var(--gold);letter-spacing:.4em}
+.to{font:400 clamp(20px,5vw,26px) 'Great Vibes',cursive;color:var(--accent);margin:6px 0 0}
+.name{font:700 clamp(24px,6.4vw,34px) 'Playfair Display',serif;margin:2px 0 10px}
+.line{width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:6px 0 12px}
+.msg{font-size:clamp(11.5px,2.9vw,14.5px);line-height:1.65;margin:0 0 10px}
+.big{font:400 clamp(26px,7vw,38px) 'Great Vibes',cursive;color:var(--accent);margin:6px 0}
+.sign{margin-top:auto;font-size:13px}
+.sign b{font:400 clamp(22px,5.5vw,28px) 'Great Vibes',cursive;color:var(--accent);display:block}
+.tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+.tools input{padding:10px 14px;border-radius:999px;border:1px solid var(--gold);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:14px;min-width:200px}
+.tools input::placeholder{color:#cfcaf0}
+.tools button{padding:10px 18px;border-radius:999px;border:0;background:var(--gold);color:#2b1a52;font:500 14px 'Poppins',sans-serif;cursor:pointer}
+.conf{position:fixed;top:-10px;width:9px;height:14px;opacity:.9;animation:fall linear forwards;pointer-events:none;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="syms"></div>
+
+<div class="stage">
+  <div class="card" id="card" role="button" tabindex="0" aria-label="Open card">
+    <div class="inside">
+      <div class="orn">✦ ❀ ✦</div>
+      <div class="to">Respected Ma'am</div>
+      <div class="name">Shahzia Gorgaje</div>
+      <div class="line"></div>
+      <p class="msg">Although you are no longer at our college, your teaching, your patience and your kindness are still with us. Thank you for believing in us and for helping us grow.</p>
+      <p class="msg">We miss you and your classes very much. Wherever you are, we pray you are always happy, healthy and successful.</p>
+      <div class="big">Happy Teachers' Day!</div>
+      <div class="sign">With respect &amp; gratitude,<b id="from">Muhazim Shahwani</b></div>
+    </div>
+    <div class="cover">
+      <div class="badge">❀</div>
+      <h1>Happy<br>Teachers' Day</h1>
+      <p>To our beloved Teacher</p>
+      <div class="hint">✦ Tap to open ✦</div>
+    </div>
+  </div>
+</div>
+
+<div class="tools">
+  <input id="nm" placeholder="Apna naam likhein" maxlength="30" aria-label="Your name">
+  <button id="go">Naam lagayen</button>
+  <button id="mu" aria-label="Music on or off">🔊 Music</button>
+</div>
+
+<script>
+var card=document.getElementById('card');
+function conf(){var c=['#e8c26a','#fff1c1','#ff8fb1','#8fd3ff','#b69cff'];
+for(var i=0;i<60;i++){var d=document.createElement('i');d.className='conf';
+d.style.left=Math.random()*100+'vw';d.style.background=c[i%5];
+d.style.animationDuration=(2.5+Math.random()*2.5)+'s';d.style.animationDelay=Math.random()*.8+'s';
+document.body.appendChild(d);setTimeout(function(x){x.remove()},6500,d);}}
+var ac=null,on=false,tm=null,started=false,B=.55,mst=null;
+var BARS=[
+{c:[220,262,330,440],m:[[659,2],[587,1],[523,1]]},
+{c:[175,262,349,440],m:[[523,2],[440,1],[523,1]]},
+{c:[131,262,330,392],m:[[659,2],[784,1],[659,1]]},
+{c:[98,247,294,392],m:[[587,3],[494,1]]},
+{c:[220,262,330,440],m:[[659,1],[880,1],[784,1],[659,1]]},
+{c:[175,262,349,440],m:[[698,2],[659,1],[523,1]]},
+{c:[131,262,330,392],m:[[587,1],[659,1],[784,1],[1047,1]]},
+{c:[98,247,294,392],m:[[494,2],[587,2]]},
+{c:[131,262,330,392],m:[[523,4]]}];
+function init(){ac=new (window.AudioContext||window.webkitAudioContext)();
+mst=ac.createGain();mst.gain.value=.9;mst.connect(ac.destination);
+var d=ac.createDelay();d.delayTime.value=.3;var fb=ac.createGain();fb.gain.value=.38;var wet=ac.createGain();wet.gain.value=.35;
+mst.connect(d);d.connect(fb);fb.connect(d);d.connect(wet);wet.connect(ac.destination);}
+function nt(f,t,d,v){[[f,'sine',1],[f*2,'triangle',.25]].forEach(function(x){
+var o=ac.createOscillator(),g=ac.createGain();o.type=x[1];o.frequency.value=x[0];var a=v*x[2];
+g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(a,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+o.connect(g);g.connect(mst);o.start(t);o.stop(t+d+.05);});}
+function loop(){if(!on)return;var t=ac.currentTime+.1;
+BARS.forEach(function(b,i){var bt=t+i*4*B;nt(b.c[0],bt,4*B,.09);
+[0,1,2,3,2,1,2,1].forEach(function(k,j){nt(b.c[k],bt+j*B/2,B*1.3,.045);});
+var s=0;b.m.forEach(function(n){nt(n[0],bt+s*B,n[1]*B*1.7,.13);s+=n[1];});});
+tm=setTimeout(loop,(BARS.length*4*B+.6)*1000-100);}
+function music(v){try{
+if(v){if(!ac)init();ac.resume();if(!on){on=true;loop();}}
+else{on=false;clearTimeout(tm);}
+document.getElementById('mu').textContent=v?'🔊 Music':'🔇 Music';}catch(e){}}
+document.getElementById('mu').addEventListener('click',function(){music(!on);});
+function toggle(){card.classList.toggle('open');
+if(card.classList.contains('open')){setTimeout(conf,700);if(!started){started=true;music(true);}}}
+card.addEventListener('click',toggle);
+card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+document.getElementById('go').addEventListener('click',function(e){
+var v=document.getElementById('nm').value.trim();if(v)document.getElementById('from').textContent=v;e.stopPropagation();});
+var s=['❀','♥','✦','✿','❁','★'],h='';
+for(var i=0;i<14;i++){h+='<span class="sym" style="left:'+(i*7.3)%100+'vw;animation-delay:-'+(i*1.7)+'s;animation-duration:'+(10+i%5*3)+'s;font-size:'+(20+i%4*8)+'px">'+s[i%s.length]+'</span>';}
+document.getElementById('syms').innerHTML=h;
+</script>
+</body>
+</html>
